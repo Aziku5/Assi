@@ -1,6 +1,5 @@
 .env
 venv
-templates
 db.sqlite3
 media
 static

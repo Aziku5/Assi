@@ -1,0 +1,11 @@
+{% include 'cartoons/header.html' %}
+
+<form action="/create_cartoon/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit">Сохранить</button>
+    <button type="reset">Отмена</button>
+</form>
+
+{% include 'cartoons/footer.html' %}
+

@@ -1,0 +1,34 @@
+{% load static %}
+{% include 'cartoons/header.html' %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="name-page">
+    <span class="badge text-bg-danger"><h1>Подробнее о мультфильме - {{cartoon_id.title}}</h1></span>
+</div>
+
+<div class="cards-page">
+  <div class="card" style="width: 18rem;">
+    <img src="{{cartoon_id.image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{cartoon_id.title}}</h5>
+      <p class="card-text">{{cartoon_id.description}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Жанр - {{cartoon_id.genre}}</li>
+      <li class="list-group-item">Режиссер - {{cartoon_id.genre}}</li>
+      <li class="list-group-item">Цена билета - {{cartoon_id.cost}}</li>
+      <li class="list-group-item">Год выпуска - {{cartoon_id.year}}</li>
+
+
+  <iframe src="{{cartoon_id.trailer}}" frameborder="0"></iframe>
+    </ul>
+  </div>
+</div>
+<div class="btn-style">
+  <button class="btn btn-dark"><a href="/cartoon_detail/{{ cartoon_id.id }}/delete/">Удалить</a></button>
+  <button class="btn btn-info"><a href="/cartoon_detail/{{ cartoon_id.id }}/update/">Изменить</a></button>
+</div>
+  <br>
+
+{% include 'cartoons/footer.html' %}
