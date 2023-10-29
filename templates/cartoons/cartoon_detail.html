@@ -4,31 +4,42 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 <div class="name-page">
-    <span class="badge text-bg-danger"><h1>Подробнее о мультфильме - {{cartoon_id.title}}</h1></span>
+    <span class="badge text-bg-danger"><h1>Подробнее о мультфильме - {{object.title}}</h1></span>
 </div>
 
 <div class="cards-page">
   <div class="card" style="width: 18rem;">
-    <img src="{{cartoon_id.image.url}}" class="card-img-top" alt="...">
+    <img src="{{object.image.url}}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{cartoon_id.title}}</h5>
-      <p class="card-text">{{cartoon_id.description}}</p>
+      <h5 class="card-title">{{object.title}}</h5>
+      <p class="card-text">{{object.description}}</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Жанр - {{cartoon_id.genre}}</li>
-      <li class="list-group-item">Режиссер - {{cartoon_id.genre}}</li>
-      <li class="list-group-item">Цена билета - {{cartoon_id.cost}}</li>
-      <li class="list-group-item">Год выпуска - {{cartoon_id.year}}</li>
+      <li class="list-group-item">Жанр - {{object.genre}}</li>
+      <li class="list-group-item">Режиссер - {{object.director}}</li>
+      <li class="list-group-item">Цена билета - {{object.cost}}</li>
+      <li class="list-group-item">Год выпуска - {{object.year}}</li>
 
 
-  <iframe src="{{cartoon_id.trailer}}" frameborder="0"></iframe>
+  <iframe src="{{object.trailer}}" frameborder="0"></iframe>
     </ul>
   </div>
 </div>
 <div class="btn-style">
-  <button class="btn btn-dark"><a href="/cartoon_detail/{{ cartoon_id.id }}/delete/">Удалить</a></button>
-  <button class="btn btn-info"><a href="/cartoon_detail/{{ cartoon_id.id }}/update/">Изменить</a></button>
+  <button class="btn btn-dark"><a href="/cartoon_detail/{{ object.id }}/delete/">Удалить</a></button>
+  <button class="btn btn-info"><a href="/cartoon_detail/{{ object.id }}/update/">Изменить</a></button>
 </div>
-  <br>
+<div class="table-center">
+   <table border="4" bgcolor="white">
+     <tr >
+       <th>Коммент &nbsp;</th> <th>Оценка &nbsp;</th> <th>Дата создания &nbsp;</th>
+     </tr>
+     {% for i in object.comment_object.all %}
+     <tr >
+       <th>{{i.text_comment}} &nbsp;</th> <th>{{i.rate_stars}} &nbsp;</th> <th>{{i.created_at}} &nbsp;</th>
+     </tr>
+     {% endfor %}
+   </table>
+</div>
 
 {% include 'cartoons/footer.html' %}

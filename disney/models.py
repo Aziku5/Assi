@@ -22,3 +22,18 @@ class Disney(models.Model):
         return f'{self.title}.{self.genre}'
 
 
+class ReviewCartoons(models.Model):
+    STARS = (
+        ('*', '*'),
+        ('* *', '* *'),
+        ('* * *', '* * *'),
+        ('* * * *', '* * * *'),
+        ('* * * * *', '* * * * *')
+    )
+    cartoon_select = models.ForeignKey(Disney, on_delete=models.CASCADE, related_name='comment_object')
+    text_comment = models.TextField()
+    rate_stars = models.CharField(max_length=20, choices=STARS)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.cartoon_select} - {self.rate_stars}'

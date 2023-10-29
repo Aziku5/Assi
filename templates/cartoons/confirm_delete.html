@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Точно хотите удалить мультфильм?</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button type="submit">Да</button>
+    <button><a href="/all_cartoons/" style="text-decoration: none; color: black;">Нет</a></button>
+</form>
+</body>
+</html>
