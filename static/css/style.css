@@ -1,0 +1,33 @@
+.cards-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 80px;
+}
+
+.name-page{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 80px;
+    margin-top: 50px;
+
+}
+.btn-style{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    gap: 50px;
+    font-weight: 900;
+    text-decoration: none;
+}
+.table-center {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+
+}

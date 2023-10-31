@@ -1,6 +1,4 @@
 .env
 venv
 db.sqlite3
-media
-static
 main
