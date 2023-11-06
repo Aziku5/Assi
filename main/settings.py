@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'disney',
+    'parser_app',
 ]
 
 MIDDLEWARE = [
