@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'blog',
     'disney',
     'parser_app',
+    'custom_Users',
 ]
 
 MIDDLEWARE = [
