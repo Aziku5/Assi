@@ -32,12 +32,12 @@ class CustomRegisterForm(UserCreationForm):
     phone_number = forms.CharField(required=True, initial='+996', label='Укажите ваш номер')
     date_birth = forms.DateField(required=True, widget=forms.DateInput(attrs={'type': 'date'}))
     gender = forms.ChoiceField(choices=GENDER_TYPE, required=True)
-    age = forms.IntegerField(required=True, verbose_name='Введите возраст')
+    year = forms.CharField(required=True, label='Введите возраст')
     hobby = forms.CharField(max_length=99, verbose_name='Ваше хобби')
     job = forms.CharField(max_length=50, verbose_name='Место работы/учебы')
-    married = forms.IntegerField(choices=MARRY, verbose_name='Женаты/замужем ли вы?')
+    married = forms.ChoiceField(choices=MARRY, verbose_name='Женаты/замужем ли вы?')
     height = forms.CharField(max_length=5, verbose_name='Сколько вы весите?')
-    animal = forms.CharField(choices=ANIMAL, verbose_name='У вас есть домашнее животное?')
+    animal = forms.ChoiceField(choices=ANIMAL, verbose_name='У вас есть домашнее животное?')
     name_animal = forms.CharField(max_length=50, verbose_name='Укажите имя вашего питомца')
 
     class Meta:

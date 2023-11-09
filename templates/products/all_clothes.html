@@ -1,0 +1,21 @@
+{% load static %}
+{% include 'games_template/header.html' %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<center>
+<h1>Общ кнтнт</h1>
+<ol>
+  {% for i in object_list %}
+  <li>
+      <h2>{{i.name}}</h2>
+      <img src="{{i.image.url}}" width="600" height="400">
+  </li>
+  {% endfor %}
+</ol>
+<a href="/product_unisex/">unisex</a>
+<a href="/product_child/">child</a>
+<a href="/product_woman/">woman</a>
+<a href="/product_man/">man</a>
+</center>
+{% include 'games_template/footer.html' %}

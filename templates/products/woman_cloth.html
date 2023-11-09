@@ -1,0 +1,29 @@
+{% load static %}
+{% include 'games_template/header.html' %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<center>
+<h1>woman</h1>
+<ol>
+  {% for i in object_list %}
+  <li>
+     <h2>{{i.name}}</h2>
+      <img src="{{i.image.url}}" width="600" height="400">
+  </li>
+  {% endfor %}
+</ol>
+<div class="table-center">
+    <table border="4" bgcolor="white">
+        <tr>
+            <th>Статус&nbsp;</th>
+        </tr>
+        {% for i in object.order_object.all %}
+        <tr>
+            <th>{{i.status}}&nbsp;</th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</center>
+{% include 'games_template/footer.html' %}
